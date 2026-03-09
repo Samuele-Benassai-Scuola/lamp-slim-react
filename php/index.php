@@ -14,12 +14,12 @@ $app->get('/test', function (Request $request, Response $response, array $args) 
     return $response;
 });
 
-$app->get('/hello/{name}', function (Request $request, Response $response, array $args) {
-    $name = $args['name'];
-    $response->getBody()->write("Hello, $name");
-    return $response;
-});
 
 $app->get('/alunni', "AlunniController:index");
+$app->get('/alunni/{id}', "AlunniController:show");
+$app->post('/alunni', "AlunniController:create");
+$app->put('/alunni/{id}', "AlunniController:update");
+$app->delete('/alunni/{id}', "AlunniController:destroy");
+
 
 $app->run();
