@@ -21,5 +21,16 @@ $app->post('/alunni', "AlunniController:create");
 $app->put('/alunni/{id}', "AlunniController:update");
 $app->delete('/alunni/{id}', "AlunniController:destroy");
 
+$app->get('/certificazioni', "CertificazioniController:index");
+$app->get('/certificazioni/{id}', "CertificazioniController:show");
+$app->post('/certificazioni', "CertificazioniController:create");
+$app->put('/certificazioni/{id}', "CertificazioniController:update");
+$app->delete('/certificazioni/{id}', "CertificazioniController:destroy");
+
+$app->get('/alunni/{alunno_id}/certificazioni', "CertificazioniRefController:index");
+$app->get('/alunni/{alunno_id}/certificazioni/{id}', "CertificazioniRefController:show");
+$app->post('/alunni/{alunno_id}/certificazioni', "CertificazioniRefController:create");
+$app->put('/alunni/{alunno_id}/certificazioni/{id}', "CertificazioniRefController:update");
+$app->delete('/alunni/{alunno_id}/certificazioni/{id}', "CertificazioniRefController:destroy");
 
 $app->run();
